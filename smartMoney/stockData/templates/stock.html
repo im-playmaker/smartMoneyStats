@@ -18,7 +18,8 @@
                 <tr>
                     <th scope="col">Company</th>
                     <th scope="col">Symbol</th>
-                    <th scope="col">Net Change</th>
+                    <th scope="col">Market Cap</th>
+                    <th scope="col">Url</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,7 +28,10 @@
                         <td>{{ stock.companyName }}</td>
                         <td>{{ stock.symbol }}</td>
                         <td>
-                            {{ stock.netchange }}
+                            {{ stock.marketCap }}
+                        </td>
+                        <td>
+                            {{ stock.url }}
                         </td>
                     </tr>
                 {% endfor %}

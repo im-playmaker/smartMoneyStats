@@ -6,7 +6,8 @@ from django.db import models
 class Stock (models.Model):
     symbol= models.CharField(max_length=10, unique=True) # Stock symbol (e.g., AAPL, TSLA)
     companyName =  models.CharField(max_length=100)  # Name of the company
-    netchange = models.DecimalField(max_digits=10,decimal_places=2)
+    marketCap =  models.BigIntegerField(default=0)  # Name of the company
+    url =  models.URLField(default="https://example.com/default")  # Name of the company
     created_at = models.DateTimeField(auto_now_add=True)  # Automatically set on object creation
 
     def __str__(self):
