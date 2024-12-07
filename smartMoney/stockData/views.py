@@ -25,7 +25,7 @@ for item in my_ng.nasdaq_stocks(10).symbol:
     symbols.append(item)
 
 print("symbols ", symbols)
-data = my_ng.nasdaq_stocks(10).to_dict('records')
+data = my_ng.nasdaq_stocks(50).to_dict('records')
 # Create your views here.
 def stock(request):
     items = Stock.objects.all()
@@ -38,7 +38,7 @@ def fetch_and_store_data():
         # Insert data into the Stock model
         for stock in data:
              if isinstance(stock['marketCap'], str):
-               stock['marketCap'] = int(stock['marketCap'].replace(',', ''))
+               stock['marketCap'] = float(stock['marketCap'].replace(',', ''))
         
              #insert Data into the stock model
              Stock.objects.update_or_create(
